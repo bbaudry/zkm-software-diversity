@@ -1,0 +1,1 @@
+Material for a talk about software diversity at [ZKM](), June 26, 2025.
