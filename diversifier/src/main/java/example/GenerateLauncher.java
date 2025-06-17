@@ -26,7 +26,7 @@ public class GenerateLauncher {
         }
         CtModel model = launcher.getModel();
         model.processWith(new MutateHu());
-        String outputDirectory = "./output/generated/" + projectName;
+        String outputDirectory = "./output/generated/" + System.currentTimeMillis()+ projectName;
         launcher.setSourceOutputDirectory(outputDirectory);
         launcher.prettyprint();
     }
