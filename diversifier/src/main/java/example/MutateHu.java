@@ -5,6 +5,7 @@ import spoon.reflect.code.BinaryOperatorKind;
 import spoon.reflect.code.CtBinaryOperator;
 import spoon.reflect.code.CtExpression;
 import spoon.reflect.code.CtInvocation;
+import spoon.reflect.code.CtLiteral;
 import spoon.reflect.code.CtLocalVariable;
 import spoon.reflect.declaration.CtElement;
 import spoon.reflect.declaration.CtField;
@@ -33,12 +34,14 @@ public class MutateHu extends AbstractProcessor<CtElement> {
                 System.out.println(((CtInvocationImpl)candidate).getArguments().get(0));
                 rand = new Random();
                 int newHu = rand.nextInt(360);
-                int un = (int)((CtInvocationImpl)candidate).getArguments().get(1);
-                int deux = (int)((CtInvocationImpl)candidate).getArguments().get(2);
-                ArrayList args = new ArrayList<Integer>();
-                args.set(0,newHu);
-                args.set(1,un);
-                args.set(2,deux);
+                CtExpression<Integer> un = (CtExpression)((CtInvocationImpl)candidate).getArguments().get(1);
+                CtExpression<Integer> deux = (CtExpression)((CtInvocationImpl)candidate).getArguments().get(2);
+                
+                ArrayList args = new ArrayList<CtLiteral>();
+                System.out.println(((CtInvocationImpl)candidate));
+                args.add(((CtInvocationImpl)candidate).getFactory().createLiteral(new Integer(newHu)));
+                args.add( un);
+                args.add( deux);
                 ((CtInvocationImpl)candidate).setArguments(args);   
             }
         }

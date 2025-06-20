@@ -2,6 +2,8 @@ package example;
 import spoon.MavenLauncher;
 import spoon.reflect.CtModel;
 
+import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 
 public class GenerateLauncher {
@@ -29,5 +31,11 @@ public class GenerateLauncher {
         String outputDirectory = "./output/generated/" + System.currentTimeMillis()+ projectName;
         launcher.setSourceOutputDirectory(outputDirectory);
         launcher.prettyprint();
+        try {
+            Files.writeString(Path.of("/home/benoit/Documents/ArticlesPresentations/Talks/ZKM/desordrerougeprocessing/demos/src/main/java/art/algo/test.java"),model.getAllTypes().stream().filter(ct -> ct.getSimpleName().equals("Plein007")).findFirst().get().getPosition().getCompilationUnit().toString());
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }        
     }
 }

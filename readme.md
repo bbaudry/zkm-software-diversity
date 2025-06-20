@@ -1,1 +1,1 @@
-Material for a talk about software diversity at [ZKM](), June 26, 2025.
+Material for a talk about software diversity at [ZKM](https://zkm.de/de), June 26, 2025. This is part of the [Conversations on Art and Media](https://hfg-karlsruhe.de/aktuelles/conversations-on-art-and-media-266-2000-hfg-lichtbruecke-benoit-baudry-kth-stockholm-software-diversity/) lecture series.
