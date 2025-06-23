@@ -17,11 +17,15 @@ fn view(app: &App, frame: Frame) {
     let draw = app.draw();
     draw.background().color(WHITE);
     draw.ellipse().color(STEELBLUE);
+    for y in -100..101 {
+        if y%3==0 {
+
     draw.line()
-        .start(pt2(-100.0,0.0))
-        .end(pt2(100.0,0.0))
+        .start(pt2(-100.0,y as f32))
+        .end(pt2(100.0,y as f32))
         .weight(1.23)
         .color(hsl(0.0,1.0,0.5));
-
+    }
+}
     draw.to_frame(app, &frame).unwrap();
 }
