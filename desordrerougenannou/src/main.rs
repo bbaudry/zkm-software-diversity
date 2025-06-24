@@ -19,10 +19,10 @@ fn view(app: &App, frame: Frame) {
     let step = w/3;
     window.set_inner_size_pixels(w,h);
     let draw = app.draw();
-    let draw = draw.translate(vec3(-450.0,0.0,0.0));
-    draw.background().color(WHITE);
-    
+    draw.background().color(WHITE);    
     draw.ellipse().color(STEELBLUE);
+    let draw = draw.translate(vec3(-450.0,0.0,0.0));
+
     for y in (-450..451).step_by(300) {
         //if y%3==0 {
             draw.line()
