@@ -7,7 +7,7 @@ var resolution, sourcecode
 function setup() {
     w = 900
     h = 900
-    cnv = createCanvas(w, h, SVG).mousePressed(savesvg);;
+    cnv = createCanvas(w, h);
     centerCanvas();
     leftmargin = Math.floor(w * 0.05)
     rightmargin = Math.floor(w * 0.95)
@@ -19,10 +19,6 @@ function setup() {
     strokeWeight(3);
     penwidth = 0.04 * 96 // 0.04 inch is 1 mm, the width of stabilo 68/32
     resolution = Math.floor(random([3, 5, 7]))
-}
-
-function savesvg() {
-    save("plein007.svg");
 }
 
 function centerCanvas() {
