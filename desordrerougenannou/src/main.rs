@@ -13,19 +13,24 @@ fn main() {
 
 fn view(app: &App, frame: Frame) {
     let window = app.main_window();
-    window.set_inner_size_pixels(900,900);
+    let w = 900;
+    let h = 900;
+    let resolution = 3;
+    let step = w/3;
+    window.set_inner_size_pixels(w,h);
     let draw = app.draw();
+    let draw = draw.translate(vec3(-450.0,0.0,0.0));
     draw.background().color(WHITE);
+    
     draw.ellipse().color(STEELBLUE);
-    for y in -100..101 {
-        if y%3==0 {
-
-    draw.line()
-        .start(pt2(-100.0,y as f32))
-        .end(pt2(100.0,y as f32))
-        .weight(1.23)
-        .color(hsl(0.0,1.0,0.5));
+    for y in (-450..451).step_by(300) {
+        //if y%3==0 {
+            draw.line()
+            .start(pt2(-100.0,y as f32))
+            .end(pt2(100.0,y as f32))
+            .weight(1.23)
+            .color(hsl(0.0,1.0,0.5));
+        //}
     }
-}
     draw.to_frame(app, &frame).unwrap();
 }
