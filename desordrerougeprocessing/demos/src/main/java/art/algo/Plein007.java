@@ -17,7 +17,7 @@ public class Plein007 extends PApplet {
     @Override
     public void settings() {
         w = 900;
-        h = 900;
+        h = 900+38;
         size(w, h);
     }
 
